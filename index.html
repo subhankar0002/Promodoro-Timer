@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="video-overlay"></div>
+    <video autoplay muted loop id="background-video">
+        <source src="video_rain.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container">
+        <h1>Pomodoro Timer</h1>
+        <div class="timer">
+            <span id="minutes">25</span>:<span id="seconds">00</span>
+        </div>
+        <div class="settings">
+            <div class="setting">
+                <label for="session-time">Session Time (minutes):</label>
+                <input type="number" id="session-time" value="25" min="1">
+            </div>
+            <div class="setting">
+                <label for="break-time">Break Time (minutes):</label>
+                <input type="number" id="break-time" value="5" min="1">
+            </div>
+            <div class="setting">
+                <label for="sessions-count">Number of Sessions:</label>
+                <input type="number" id="sessions-count" value="4" min="1">
+            </div>
+        </div>
+        <div class="controls">
+            <button id="start-stop">Start</button>
+            <button id="reset">Reset</button>
+        </div>
+        <button id="theme-btn" class="theme-btn">
+            <i class="fas fa-adjust"></i> Toggle Theme
+        </button>
+    </div>
+    <div class="notes-section">
+        <h2>Notes</h2>
+        <div class="note-input">
+            <input type="text" id="note-text" placeholder="Enter your note...">
+            <select id="note-priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <input type="number" id="note-time" placeholder="Time in minutes" min="1">
+            <button id="add-note">Add Note</button>
+        </div>
+        <ul id="notes-list"></ul>
+    </div>
+    <div class="music-widget">
+        <h2>Select Background Music</h2>
+        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+    <div id="edit-popup" class="popup">
+        <div class="popup-content">
+            <h2>Edit Note</h2>
+            <input type="text" id="edit-note-text" placeholder="Edit your note...">
+            <select id="edit-note-priority">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <button id="save-note">Save</button>
+            <button id="close-edit-popup">Cancel</button>
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>Time's Up!</h2>
+            <p>Your session is complete. Time for a break!</p>
+            <button id="close-popup">OK</button>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
